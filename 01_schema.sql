@@ -183,7 +183,7 @@ CREATE TABLE payment (
         OR (source_type <> 'Sale' AND sale_id IS NULL)
     ),
     CONSTRAINT fk_payment_sale FOREIGN KEY (sale_id)
-        REFERENCES sale(sale_id) ON DELETE CASCADE ON UPDATE CASCADE
+        REFERENCES sale(sale_id) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB;
 
 /* ----------------------------------------------------------------
